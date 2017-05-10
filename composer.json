@@ -1,14 +1,14 @@
 {
-    "name": "e421083458/wxxcx",
-    "description": "A WeChat applet plugins for Laravel.",
-    "keywords": ["laravel", "WeChat", "wxxcx"],
+    "name": "vicleos/wxxcx",
+    "description": "A WeChat applet (xiaochengxu) plugins for Laravel 5.",
+    "keywords": ["laravel", "WeChat", "wxxcx", "xcx", "wxxcx"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Richard Neil",
-            "email": "e421083458@163.com",
+            "name": "vicleos",
+            "email": "510331882@qq.com",
             "role": "Developer",
-            "homepage": "http://blog.csdn.net/e421083458"
+            "homepage": "https://github.com/vicleos"
         }
     ],
     "require": {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-0": {
-            "E421083458\\Wxxcx": "src/"
+            "Vicleos\\Wxxcx": "src/"
         }
     },
     "minimum-stability": "stable"
