@@ -1,0 +1,28 @@
+{
+    "name": "e421083458/wxxcx",
+    "description": "A WeChat applet plugins for Laravel.",
+    "keywords": ["laravel", "WeChat", "wxxcx"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Neil",
+            "email": "e421083458@163.com",
+            "role": "Developer",
+            "homepage": "http://blog.csdn.net/e421083458"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "~5",
+        "ixudra/curl": ">=6.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "E421083458\\Wxxcx": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
