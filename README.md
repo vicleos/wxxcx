@@ -84,18 +84,18 @@ print_r($userinfo);
 reponse:
 ```
 {
-    "openId": "oGZUI0egBJY1zhBYw2KhdUfwVJJE",
-    "nickName": "Band",
+    "openId": "xxxx",
+    "nickName": "Vicleos",
     "gender": 1,
     "language": "zh_CN",
-    "city": "Guangzhou",
-    "province": "Guangdong",
+    "city": "Beijing",
+    "province": "Beijing",
     "country": "CN",
-    "avatarUrl": "http://wx.qlogo.cn/mmopen/vi_32/aSKcBBPpibyKNicHNTMM0qJVh8Kjgiak2AHWr8MHM4WgMEm7GFhsf8OYrySdbvAMvTsw3mo8ibKicsnfN5pRjl1p8HQ/0",
-    "unionId": "ocMvos6NjeKLIBqg5Mr9QjxrP1FA",
+    "avatarUrl": "http://wx.qlogo.cn/mmopen/vi_32/xxxx",
+    "unionId": "xxxxx",
     "watermark": {
-        "timestamp": 1477314187,
-        "appid": "wx4f4bc4dec97d474b"
+        "timestamp": 1465251521,
+        "appid": "your appid"
     }
 }
 ```
