@@ -1,5 +1,5 @@
 <?php
-namespace E421083458\Wxxcx;
+namespace Vicleos\Wxxcx;
 
 
 use Ixudra\Curl\Facades\Curl;
@@ -28,7 +28,7 @@ class Wxxcx
     }
 
     /**
-     * Created by e421083458@163.com
+     * Created by vicleos
      * @return mixed
      */
     public function getLoginInfo($code){
@@ -37,7 +37,7 @@ class Wxxcx
     }
 
     /**
-     * Created by e421083458@163.com
+     * Created by vicleos
      * @param $encryptedData
      * @param $iv
      * @return string
@@ -54,7 +54,7 @@ class Wxxcx
     }
 
     /**
-     * Created by e421083458@163.com
+     * Created by vicleos
      * @throws \Exception
      */
     private function authCodeAndCode2session($code){

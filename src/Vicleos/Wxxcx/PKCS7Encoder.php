@@ -1,5 +1,5 @@
 <?php
-namespace E421083458\Wxxcx;
+namespace Vicleos\Wxxcx;
 
 
 class PKCS7Encoder

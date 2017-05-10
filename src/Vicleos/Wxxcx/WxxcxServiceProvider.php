@@ -1,5 +1,5 @@
 <?php
-namespace E421083458\Wxxcx;
+namespace Vicleos\Wxxcx;
 
 use Illuminate\Support\ServiceProvider;
 

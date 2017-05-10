@@ -11,40 +11,25 @@ class WxxcxTest extends TestCase
 
         // config
         $config = [
-            'appid' => 'wx4f4bc4dec97d474b',
-            'secret' => 'tiihtNczf5v6AKRyjwEUhQ==',
+            'appid' => 'your appid',
+            'secret' => 'your appsecret',
             'code2session_url' => "https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code",
         ];
 
-        $this->wxxcx = new E421083458\Wxxcx\Wxxcx($config);
+        $this->wxxcx = new Vicleos\Wxxcx\Wxxcx($config);
     }
 
 
     public function testGetUserInfo()
     {
         $xcx = \Illuminate\Support\Facades\App::make("wxxcx");
-        $encryptedData="CiyLU1Aw2KjvrjMdj8YKliAjtP4gsMZM
-                QmRzooG2xrDcvSnxIMXFufNstNGTyaGS
-                9uT5geRa0W4oTOb1WT7fJlAC+oNPdbB+
-                3hVbJSRgv+4lGOETKUQz6OYStslQ142d
-                NCuabNPGBzlooOmB231qMM85d2/fV6Ch
-                evvXvQP8Hkue1poOFtnEtpyxVLW1zAo6
-                /1Xx1COxFvrc2d7UL/lmHInNlxuacJXw
-                u0fjpXfz/YqYzBIBzD6WUfTIF9GRHpOn
-                /Hz7saL8xz+W//FRAUid1OksQaQx4CMs
-                8LOddcQhULW4ucetDf96JcR3g0gfRK4P
-                C7E/r7Z6xNrXd2UIeorGj5Ef7b1pJAYB
-                6Y5anaHqZ9J6nKEBvB4DnNLIVWSgARns
-                /8wR2SiRS7MNACwTyrGvt9ts8p12PKFd
-                lqYTopNHR1Vf7XjfhQlVsAJdNiKdYmYV
-                oKlaRv85IfVunYzO0IKXsyl7JCUjCpoG
-                20f0a04COwfneQAGGwd5oa+T8yO5hzuy
-                Db/XcxxmK01EpqOyuxINew==";
+        //来自于wx.getUserInfo的请求结果
+        $encryptedData="FVpMJr/JALHK2cS1xyhtki1aqgEvsBhu+zQu6k1OCSI3utxr1rNH88j3eGOe22dEeBVfvS/YoHbRvojtN6nRjsfMKzeg++EOSpNMX16f9zOqdc6uyTzw8nop7/Fuso5U6mkRQ9SqcQ+SUXRbXD8Imb+MM1pIsXF1M5/EofXUDIf8nOvm3YVF+zhLCkOxEX1LuaFOEfK1togu6JwerKNYst+CeI3/NgkmTcJJ0aE1p2cM+8SRG/Tzj2L4S8xUHWMrPePgkvhDrvkMhJUn/JwL4F5xP4/1K6u9bbCQeAQm0uQA/fUpsXuD4Cp+sDpE0B3zv/znBo/GZitPzgU7lBsq6F4LstcgPMYsjUgH23uOHROpWdLS5SSn/zt3h8iNqb8ktcj58lJyJlPXWip9Ikrb85hWAvtLN50yAEW4u65K6/MGFJw426Aslv7A4xoVb5gRYfoIXeNJsTKIhEKiX/Hs9PDf7DScba5STaoAqXXpeFDGAUQOmHGsbvLGoKBqI5Dtq0/v+mXNVbsTOVRdng9o4Q==";
 
-        $iv = 'r7BXXKkLb8qrSNn05n0qiA==';
+        $iv = 'YlaRVOv/v64nM3xayX7iVw==';
         $userinfo = $xcx->getUserInfo($encryptedData,$iv);
         $userArr = json_decode($userinfo,true);
-        $this->assertEquals('oGZUI0egBJY1zhBYw2KhdUfwVJJE', $userArr["openId"]);
+        $this->assertEquals('your openId', $userArr["openId"]);
     }
 
 }
