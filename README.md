@@ -21,7 +21,7 @@ composer require vicleos/wxxcx
 或者添加如下信息到你的 `composer.json` 文件中 :
 
 ```json
-"e421083458/wxxcx": "1.*"
+"vicleos/wxxcx": "1.*"
 ```
 
 然后注册服务提供者到 Laravel中 :
@@ -49,8 +49,8 @@ print_r($loginInfo);
 reponse:
 ```
 {
-    "openid": "oxkfq0NMYybphA3O6ZvN585ZuJCI",
-    "session_key": "RKt9WSMWs8ijJ6TVj4OBbQ=="
+    "openid": "xxxx",
+    "session_key": "xxxx"
 }
 ```
 
