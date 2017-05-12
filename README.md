@@ -36,6 +36,9 @@ php artisan vendor:publish --provider="Vicleos\Wxxcx\WxxcxServiceProvider"
 ```
 命令完成后，会添加一个`wxxcx.php`配置文件到您的配置文件夹 如 : `/config/wxxcx.php`。
 
+生成配置文件后，将小程序的 `AppID` 和 `AppSecret` 填写到 `/config/wxxcx.php` 文件中
+
+
 ## Demo
 
 共需要两步操作
