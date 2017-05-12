@@ -34,6 +34,7 @@ Vicleos\Wxxcx\WxxcxServiceProvider::class,
 ```bash
 php artisan vendor:publish --provider="Vicleos\Wxxcx\WxxcxServiceProvider"
 ```
+命令完成后，会添加一个`wxxcx.php`配置文件到您的配置文件夹 如 : `/config/wxxcx.php`。
 
 ## Demo
 
