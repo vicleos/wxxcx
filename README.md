@@ -24,7 +24,7 @@ composer require vicleos/wxxcx
 "vicleos/wxxcx": "1.*"
 ```
 
-然后注册服务提供者到 Laravel中 :
+然后注册服务提供者到 Laravel中 具体位置：`/config/app.php` 中的 `providers` 数组:
 
 ```php
 Vicleos\Wxxcx\WxxcxServiceProvider::class,
