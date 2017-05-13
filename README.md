@@ -38,40 +38,46 @@ php artisan vendor:publish --provider="Vicleos\Wxxcx\WxxcxServiceProvider"
 
 生成配置文件后，将小程序的 `AppID` 和 `AppSecret` 填写到 `/config/wxxcx.php` 文件中
 
-
-## Demo
-
-共需要两步操作
-1. 调用getLoginInfo得到用户信息,里面会自动封装sessionKey信息
+## 在Laravel 5控制器中使用 (示例)
 
 ```php
-$xcx = App::make("wxxcx");
-$loginInfo = $xcx->getLoginInfo($code); //code为用户登陆成功后获取到的
-print_r($loginInfo);
-```
-
-reponse:
-```
+...
+use Vicleos\Wxxcx\Wxxcx;
+...
+class YourController extends Controller
 {
-    "openid": "xxxx",
-    "session_key": "xxxx"
+    ...
+
+    private function getWxxcx()
+    {
+        return new Wxxcx(config('wxxcx'));
+    }
+    
+    /* 根据 code , encryptedData , iv 获取用户解密后的信息 */
+    public function getWxUserInfo(Request $rq)
+    {
+        //使用 ajax 请求将获取的加密数据和参数发送到这里
+
+        //code 在小程序端使用 wx.login 获取
+        $code = $rq->input('code');
+        //encryptedData 和 iv 在小程序端使用 wx.getUserInfo 获取
+        $encryptedData = $rq->input('encryptedData');
+        $iv = $rq->input('iv');
+        
+        //小程序类实例化
+        $wxxcx = $this->getWxxcx();
+        //根据 code 获取用户 session_key 等信息
+        $wxxcx->getLoginInfo($code);
+        //获取解密后的用户信息
+        return $wxxcx->getUserInfo($encryptedData, $iv);
+    }
+
+    ...
 }
 ```
 
-2. 第一步操作成功后才能调用第二步, getUserInfo 会得到用户头像、昵称、等信息
-
-```php
-$iv = "r7BXXKkLb8qrSNn05n0qiA==";
-$encryptedData="some code balabala....";
-//sessionkey如何获取？
-//请求 wx.login 接口获取到 code
-//通过 appid、appscret、code 请求微信 jscode2session 接口获取 session_key
-$xcx->setSessionKey("session key from wechat server api");
-$userinfo = $xcx->getUserInfo($encryptedData,$iv);
-print_r($userinfo);
-```
-
 reponse:
+
 ```
 {
     "openId": "xxxx",
@@ -89,4 +95,17 @@ reponse:
     }
 }
 ```
-# 微信小程序 Laravel
+
+## 如何获取 `wx.login()` 中的 `code`
+
+```javascript
+...
+    wx.login({
+        success: function (res) {
+            console.log(res.code);
+            //结果 "071A8Miq00onPq1BpUgq0NBPiq0xxxx"
+        }
+    })
+...
+```
+
