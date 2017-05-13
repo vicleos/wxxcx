@@ -96,7 +96,7 @@ reponse:
 }
 ```
 
-## 如何获取 `wx.login()` 中的 `code`
+## 小程序端如何获取 `wx.login()` 中的 `code`
 
 ```javascript
 ...
