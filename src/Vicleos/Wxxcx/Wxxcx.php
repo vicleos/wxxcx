@@ -55,6 +55,7 @@ class Wxxcx
 
     /**
      * Created by vicleos
+     * 根据 code 获取 session_key 等相关信息
      * @throws \Exception
      */
     private function authCodeAndCode2session($code){
